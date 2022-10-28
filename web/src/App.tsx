@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/main.css';
-
+import {Login} from './pages/login'
 // TypeScript sendo instanciado
 interface ButtonProps{
   title: string;
@@ -17,10 +17,14 @@ function Buttoon(props: ButtonProps){
 }
 
 
-function App() {
+export function App() {
   const [navbarOpne, setNavbarOpne] = React.useState(false);
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col ">
+      <div>
+        <Login/>
+
+      </div>
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 mb-3">
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
