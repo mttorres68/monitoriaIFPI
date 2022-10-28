@@ -10,28 +10,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Aluno {
-  matricula      String @id @default(cuid())
+model usuario {
+  matricula      String   @id 
   nome           String
-  dataNascimento String
-  cpf            String @unique
+  curso          String
+  cpf            String   @unique
   telefone       String
-  email          String @unique
+  email          String   @unique
+  senha          Int
 }
 
-model Monitorias {
-  id         String @id @default(cuid())
-  disciplina String
+model curso {
+  nome String @id 
+
+  disciplinas disciplina[]
 }
 
-model Monitor {
-  id String @id @default(cuid())
-}
+model disciplina {
+  nome String @id
 
-model Docente {
-  id String @id @default(cuid())
-}
-
-model Coordenador {
-  id String @id @default(cuid())
+  cursos curso[]
 }
