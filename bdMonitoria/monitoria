@@ -1,0 +1,5 @@
+select * from usuario;
+
+select * from curso;
+
+select * from disciplina;
